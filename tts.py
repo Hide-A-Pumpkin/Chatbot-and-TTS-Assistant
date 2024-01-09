@@ -1,14 +1,13 @@
-import pyttsx3
+from gtts import gTTS
+import os
+from playsound import playsound
 
+# In this part, I used gTTS (Google Text-to-Speech), a Python library and CLI tool to interface with Google Translate's text-to-speech API. 
 class TextToSpeechConverter:
-    def __init__(self):
-        self.engine = pyttsx3.init()
-        # You can adjust the properties like voice, rate, and volume as needed
-        # For example: self.engine.setProperty('rate', 150)
-
-    def speak(self, text):
-        self.engine.say(text)
-        self.engine.runAndWait()
+    def speak(self, text, language='en'):
+        tts = gTTS(text=text, lang=language)
+        tts.save("speech.mp3")
+        playsound("speech.mp3")
 
 # Example usage
 tts = TextToSpeechConverter()
