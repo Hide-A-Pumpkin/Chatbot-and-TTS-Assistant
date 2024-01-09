@@ -1,6 +1,9 @@
 import threading
 import spacy
-
+from gtts import gTTS
+import os
+from playsound import playsound
+import tempfile
 
 
 class ChatbotSessionManager:
@@ -34,8 +37,18 @@ class ChatbotSessionManager:
             # Print the interaction
             print(f"{user_id}: {message}")
             print(f"Chatbot: {response}")
-
+            
+            
+            self.tts_speak(response)
             return response
+    
+    def tts_speak(self, text, language = 'en'):
+        fp = 'speech.mp3'
+        tts = gTTS(text = text, lang = language)
+        tts.save(fp)
+        playsound(fp)
+        os.remove(fp)
+
 
     def create_new_session(self, user_id):
         # Create a new session for a new user
