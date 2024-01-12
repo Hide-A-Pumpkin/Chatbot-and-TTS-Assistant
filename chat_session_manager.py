@@ -3,7 +3,6 @@ import spacy
 from gtts import gTTS
 import os
 from playsound import playsound
-import tempfile
 
 
 class ChatbotSessionManager:
