@@ -7,6 +7,19 @@ Date: 1/12/2024
 This chatbot application is designed to interact with users through text-based messages and respond with both text and voice using a Text-to-Speech (TTS) system. 
 It handles multiple users and maintains separate conversations, while also personalizing responses based on named entity recognition.
 
+## Task 1:
+
+1. Developed a class named `ChatbotSessionManager` to handle multiple user conversations. It uses a dictionary to store conversation states keyed by user IDs.
+
+2. Include a threading lock to ensure concurrent interactions are managed safely.
+
+3. Utilize `spaCy`, a natural language processing library to extract named entities like names, places, and dates from user messages.
+
+## Task 2:
+1. `gTTS` was selected for its superior natural-sounding speech, compared with offline TTS libraries like `pyttsx3`. It requires an internet connection.
+
+2. Synthesizing speech by creating temporary MP3 files generated using `gTTS` and playing them back using the `playsound` library.
+
 
 ## Requirements
 Before running the chatbot, make sure you have Python installed on your system. The chatbot requires the following Python libraries:

@@ -88,7 +88,7 @@ class ChatbotSessionManager:
             elif type == "GPE":
                 entity_descriptions.append(f"a place called {text}")
             elif type == "DATE":
-                entity_descriptions.append(f"a date: {text}")
+                entity_descriptions.append(f"a date called {text}")
 
         response += ", ".join(entity_descriptions)
 
