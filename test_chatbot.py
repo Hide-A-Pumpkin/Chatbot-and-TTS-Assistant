@@ -5,7 +5,6 @@ chatbot = ChatbotSessionManager()
 chatbot.get_response("user1", "Hi, chatbot!")
 chatbot.get_response("user1", "How's the weather today?")
 chatbot.get_response("user2", "Hello, is this customer support?")
-chatbot.get_response("user2", "I need help with my order.")
 chatbot.get_response("user1", "Can you check my account balance?")
 
 
